@@ -1,5 +1,6 @@
 # Ignore VS Code settings folder
 .vscode/
+.gitignore
 
 # Ignore build outputs
 *.exe
