@@ -19,7 +19,7 @@ void check_valid_arg(int argc, char *argv[], int valid_arg_no, string_view valid
     {
         cerr << BRED << "Error: " << RESET << "You are only allowed to use " << valid_arg_no << " arguments.\n";
         cerr << "You are using " << argc << " arguments.\n";
-        cerr << "Example of a valid Programme: .\\rooster.exe " << valid_argument;
+        cerr << "Example of a valid Programme: .\\main.exe " << valid_argument;
         exit(EXIT_FAILURE);
     }
 }
