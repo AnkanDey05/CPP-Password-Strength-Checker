@@ -13,6 +13,9 @@ using namespace std;
 #define BCYAN "\033[1;36m"
 #define BWHITE "\033[1;37m"
 #define RESET "\033[0m"
+
+// Check If the arguments to the function(Specially main) is valid
+
 void check_valid_arg(int argc, char *argv[], int valid_arg_no, string_view valid_argument)
 {
     if (argc != valid_arg_no)
@@ -23,6 +26,9 @@ void check_valid_arg(int argc, char *argv[], int valid_arg_no, string_view valid
         exit(EXIT_FAILURE);
     }
 }
+
+// Calculating Different parameters of a string
+
 bool isSpecialchar(char ch)
 {
     return !isalnum(static_cast<unsigned char>(ch));
@@ -69,6 +75,8 @@ int count_Lowecase(string_view str)
     int lc = str.size() - count_Uppercase(str) - count_special_charecter(str) - count_digit(str);
     return lc;
 }
+
+// Giving the string A score based on its parameter and calculating its strength:
 void password_score(string_view usrnm, string_view password)
 {
     double length_score = 0.25 * password.size();
@@ -93,14 +101,15 @@ void password_score(string_view usrnm, string_view password)
         pass_score = 0;
         cout << BYELLOW << "You are using Username as your password this is extremely vulnerable" << RESET << pass_score << endl;
     }
-    else if (sc_score == 0 && pass_score >= 2)
+    if (sc_score == 0 && pass_score >= 2)
     {
         pass_score -= 2;
     }
-    else if (dc_score == 0 && pass_score >= 2)
+    if (dc_score == 0 && pass_score >= 2)
     {
         pass_score -= 2;
     }
+    // If you want to show every scores just remove this comments--
     // cout << BYELLOW << "Length Score: " << RESET << length_score << endl;
     // cout << BYELLOW << "UC Score: " << RESET << uc_score << endl;
     // cout << BYELLOW << "Dc Score: " << RESET << dc_score << endl;
@@ -127,7 +136,7 @@ void password_score(string_view usrnm, string_view password)
         cout << BCYAN << "Your password is Very Strong." << RESET << endl;
     }
     // Recomendation:
-    if (pass_score < 9 && length_score < 2||dc_score < 1||sc_score < 1||uc_score < 2 )
+    if (pass_score < 9 && length_score < 2 || dc_score < 1 || sc_score < 1 || uc_score < 2)
     {
         cout << BRED << "Recommendations:" << RESET << endl;
         if (length_score < 2)
@@ -162,9 +171,4 @@ void password_analysis(string_view username, string_view pass)
     cout << BMAGENTA << "Getting password score..." << RESET << endl;
     Sleep(2000);
     password_score(username, pass);
-    // unsigned int p_score=password_score(username, pass);
-    // if (password_score==0)
-    // {
-    //     cout << BRED << "Your password is extremely vulnerable please change your " << RESET << endl;
-    // }
 }
