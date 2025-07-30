@@ -1,0 +1,33 @@
+# Ignore VS Code settings folder
+.vscode/
+
+# Ignore build outputs
+*.exe
+*.out
+*.o
+*.obj
+*.log
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+
+# Ignore CMake build folders (if used)
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore macOS junk files (if using mac)
+.DS_Store
+
+# Ignore Windows thumbnail database
+Thumbs.db
