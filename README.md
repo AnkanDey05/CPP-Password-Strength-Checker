@@ -21,7 +21,7 @@ A simple C++ command-line tool to evaluate the strength of a given password. It 
 
 1. Clone the repository.
 2. Compile the code in vscode or other IDE (Make Sure GCC or other similar compiler is already installed).
-3. Run the Code: ./password_checker <username> <password>
+3. Run the Code: ./password_checker username password
 
 ### Note: This code will only work if you are using arguments in the main function.
 
